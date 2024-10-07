@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main class="container box-password p-5">
+    <main class="container box-password mt-5 p-5">
         <div>
             <h1 class="text-center text-secondary">Strong Password Generator</h1>
             <h2 class="text-center text-light">Genera una password sicura</h2>
@@ -19,27 +19,52 @@
         <div class="rounded rounded-1 p-4 mb-3 validation-message">
             Nessun parametro valido inserito
         </div>
-        <div class="rounded rounded-1 p-4 bg-white form-box d-flex">
-            <div class="left">
-                <label class="mb-4" for="password">Lunghezza password</label>
-                <p>Consenti ripetizioni di uno o più caratteri:</p>
-            </div>
-            <div class="right row">
-                <div class="col-5 mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="password" name="password">
+
+        <form action="">
+            <div class="rounded rounded-1 p-4 bg-white form-box">
+                <div class="d-flex">
+                    <div class="left">
+                        <label class="mb-4" for="password">Lunghezza password</label>
+                        <p>Consenti ripetizioni di uno o più caratteri:</p>
+                    </div>
+
+                    <div class="right row">
+                        <div class="col-5 mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="password"
+                                name="password">
+                        </div>
+                        <div class="mb-3">
+                            <div>
+                                <input type="radio" name="repetition" id="si" value="si">
+                                <label for="si">Si</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="no" name="repetition" value="no">
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <input type="checkbox" name="lettere" id="lettere" value="lettere">
+                                <label for="lettere">Lettere</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="numeri" id="numeri" value="numeri">
+                                <label for="numeri">Numeri</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="simbboli" id="simbboli" value="simbboli">
+                                <label for="simbboli">Simboli</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <div>
-                        <input type="radio" id="si">
-                        <label for="si">Si</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="no">
-                        <label for="no">No</label>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Invia</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
 </body>
 
