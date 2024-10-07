@@ -1,8 +1,11 @@
 <?php
-function getStrongRandomPassword($length, $symbols, $characters, $numbers)
+
+function getStrongRandomPassword($chars)
 {
-    $characters = "";
+    $characters = '!"#$%&\'()*+,-./:;=?@[\]^_{|}~;1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+    return substr(str_shuffle($characters), 0, $chars);
 }
+// echo getStrongRandomPassword((int)$_GET["length_password"]) . "\n";
 
 ?>
 
@@ -25,7 +28,11 @@ function getStrongRandomPassword($length, $symbols, $characters, $numbers)
             <h2 class="text-center text-light">Genera una password sicura</h2>
         </div>
         <div class="rounded rounded-1 p-4 mb-3 validation-message">
-            Nessun parametro valido inserito
+            <?php if (isset($_GET["length_password"]) && ($_GET["length_password"] >= 6)) { ?>
+            <p><?= getStrongRandomPassword((int)$_GET["length_password"]) . "\n" ?></p>
+            <?php } else { ?>
+            <p>Nessun parametro valido inserito</p>
+            <?php } ?>
         </div>
 
         <form action="index.php" method="GET">
@@ -38,8 +45,8 @@ function getStrongRandomPassword($length, $symbols, $characters, $numbers)
 
                     <div class="right row">
                         <div class="col-5 mb-3">
-                            <input type="number" class="form-control" id="length" placeholder="6" name="length_password"
-                                min="6" max="15">
+                            <input type="number" class="form-control" id="length" name="length_password" min="6"
+                                max="15">
                         </div>
                         <div class="mb-3">
                             <div>
