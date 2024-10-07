@@ -25,8 +25,18 @@
                 <p>Consenti ripetizioni di uno o più caratteri:</p>
             </div>
             <div class="right row">
-                <div class="col-5">
+                <div class="col-5 mb-3">
                     <input type="password" class="form-control" id="password" placeholder="password" name="password">
+                </div>
+                <div>
+                    <div>
+                        <input type="radio" id="si">
+                        <label for="si">Si</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no">
+                        <label for="no">No</label>
+                    </div>
                 </div>
             </div>
         </div>
