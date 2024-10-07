@@ -1,3 +1,11 @@
+<?php
+function getStrongRandomPassword($length, $symbols, $characters, $numbers)
+{
+    $characters = "";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,18 +28,18 @@
             Nessun parametro valido inserito
         </div>
 
-        <form action="">
+        <form action="index.php" method="GET">
             <div class="rounded rounded-1 p-4 bg-white form-box">
                 <div class="d-flex">
                     <div class="left">
-                        <label class="mb-4" for="password">Lunghezza password</label>
+                        <label class="mb-4" for="length">Lunghezza password</label>
                         <p>Consenti ripetizioni di uno o più caratteri:</p>
                     </div>
 
                     <div class="right row">
                         <div class="col-5 mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="password"
-                                name="password">
+                            <input type="number" class="form-control" id="length" placeholder="6" name="length_password"
+                                min="6" max="15">
                         </div>
                         <div class="mb-3">
                             <div>
