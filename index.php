@@ -29,7 +29,7 @@ function getStrongRandomPassword($chars)
         </div>
         <div class="rounded rounded-1 p-4 mb-3 validation-message">
             <?php if (isset($_GET["length_password"]) && ($_GET["length_password"] >= 6)) { ?>
-            <p><?= getStrongRandomPassword((int)$_GET["length_password"]) . "\n" ?></p>
+            <p><?= getStrongRandomPassword((int)$_GET["length_password"]) ?></p>
             <?php } else { ?>
             <p>Nessun parametro valido inserito</p>
             <?php } ?>
@@ -45,8 +45,7 @@ function getStrongRandomPassword($chars)
 
                     <div class="right row">
                         <div class="col-5 mb-3">
-                            <input type="number" class="form-control" id="length" name="length_password" min="6"
-                                max="15">
+                            <input type="number" class="form-control" id="length" name="length_password" min="6">
                         </div>
                         <div class="mb-3">
                             <div>
