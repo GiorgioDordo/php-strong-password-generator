@@ -1,12 +1,5 @@
 <?php
-
-function getStrongRandomPassword($chars)
-{
-    $characters = '!"#$%&\'()*+,-./:;=?@[\]^_{|}~;1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
-    return substr(str_shuffle($characters), 0, $chars);
-}
-// echo getStrongRandomPassword((int)$_GET["length_password"]) . "\n";
-
+require __DIR__  .  '/function.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +22,9 @@ function getStrongRandomPassword($chars)
         </div>
         <div class="rounded rounded-1 p-4 mb-3 validation-message">
             <?php if (isset($_GET["length_password"]) && ($_GET["length_password"] >= 6)) { ?>
-            <p><?= getStrongRandomPassword((int)$_GET["length_password"]) ?></p>
+                <p><?= getStrongRandomPassword((int)$_GET["length_password"]) ?></p>
             <?php } else { ?>
-            <p>Nessun parametro valido inserito</p>
+                <p>Nessun parametro valido inserito</p>
             <?php } ?>
         </div>
 
