@@ -1,0 +1,15 @@
+.box-password {
+    background-color: rgb(0, 23, 49);
+}
+
+.validation-message {
+    background-color: aqua;
+}
+
+.left {
+    flex-basis: 60%;
+}
+
+.right {
+    flex-basis: 40%;
+}
